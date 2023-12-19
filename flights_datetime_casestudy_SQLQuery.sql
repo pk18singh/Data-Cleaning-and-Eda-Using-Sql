@@ -125,7 +125,7 @@ SELECT source,destination,
 TIME_FORMAT(SEC_TO_TIME(AVG(duration_mins)*60),'%kh %im') AS 'avg_duration' FROM flights
 GROUP BY source,destination HAVING AVG(duration_mins) > 180;
 
--- 	17. Make a weekday vs time grid showing frequency of flights from Banglore and Delhi
+--  17. Make a weekday vs time grid showing frequency of flights from Banglore and Delhi
 
 SELECT DAYNAME(departure),
   SUM(CASE WHEN HOUR(departure) BETWEEN 0 AND 5 THEN 1 ELSE 0 END) AS '12AM - 6AM',
